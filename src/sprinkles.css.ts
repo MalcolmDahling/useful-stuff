@@ -67,7 +67,7 @@ const responsiveProperties = defineProperties({
     borderColor: colors,
 
     transition: {
-      ms250: 'all 250ms',
+      all200ms: 'all 200ms',
     },
 
     cursor: {

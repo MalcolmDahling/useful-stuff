@@ -1,30 +1,28 @@
 import { colors, sprinkles } from '@/sprinkles.css';
 import { recipe } from '@vanilla-extract/recipes';
 
-export const HeaderButtonContainerStyle = recipe({
-  base: {
-    flexBasis: '100%',
-
-    height: 75,
-    display: 'flex',
-    alignItems: 'center',
-  },
-});
-
 export const HeaderButtonStyle = recipe({
   base: [
     sprinkles({
       fontSize: 'paragraph',
-      transition: 'ms250',
+      transition: 'all200ms',
       cursor: 'pointer',
     }),
     {
       width: '100%',
-      height: '100%',
+      height: 80,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+
       border: 'none',
 
-      ':hover': {
-        background: colors.carbonFiber,
+      selectors: {
+        '&:hover': {
+          background: colors.carbonFiber,
+          opacity: 1,
+        },
       },
     },
   ],
@@ -32,23 +30,69 @@ export const HeaderButtonStyle = recipe({
   variants: {
     selected: {
       true: {
+        opacity: 1,
         background: colors.carbonFiber,
       },
       false: {
+        opacity: 0.5,
         background: colors.eerieBlack,
       },
     },
   },
 });
 
-export const HeaderButtonSpacerStyle = recipe({
+export const HeaderButtonLogoStyle = recipe({
   base: [
     sprinkles({
-      background: 'white',
+      transition: 'all200ms',
     }),
     {
-      width: 1,
-      height: '100%',
+      position: 'relative',
+
+      selectors: {
+        [`${HeaderButtonStyle()}:hover &`]: {
+          top: '0%',
+          translate: '0% 0%',
+        },
+      },
     },
   ],
+
+  variants: {
+    selected: {
+      true: {
+        translate: '0% 0%',
+      },
+      false: {
+        translate: '0% 25%',
+      },
+    },
+  },
+});
+
+export const HeaderButtonTitleStyle = recipe({
+  base: [
+    sprinkles({ transition: 'all200ms' }),
+    {
+      margin: 0,
+      opacity: 0,
+
+      selectors: {
+        [`${HeaderButtonStyle()}:hover &`]: {
+          opacity: 1,
+        },
+      },
+    },
+  ],
+
+  variants: {
+    selected: {
+      true: {
+        opacity: 1,
+      },
+      false: {
+        opacity: 0,
+      },
+    },
+  },
 });
