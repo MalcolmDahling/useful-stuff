@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className={HeaderStyle()}>
       <HeaderButton
-        text="Node Libraries"
+        text="Libraries"
         image="images/logos/nodejs.svg"
         spacer={true}
         setSelectedPage={() => setSelectedPage(0)}
