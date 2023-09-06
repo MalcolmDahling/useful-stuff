@@ -23,21 +23,20 @@ export const colors = {
   indigoPurple: 'rgb(108, 0, 158)',
 };
 
+export const mediaSizes = {
+  mobile: 'screen and (max-width: 768px)',
+  tablet: 'screen and (max-width: 1023px)',
+  desktop: 'screen and (min-width: 1024px)',
+};
+
 const space = {
-  none: 0,
+  0: 0,
   small: 4,
   medium: 8,
   large: 16,
 };
 
 const responsiveProperties = defineProperties({
-  conditions: {
-    mobile: { '@media': 'screen and (max-width: 768px)' },
-    tablet: { '@media': 'screen and (max-width: 1023px)' },
-    desktop: { '@media': 'screen and (min-width: 1024px)' },
-  },
-  defaultCondition: 'desktop',
-
   properties: {
     fontFamily: {
       quicksand: fonts.quicksand,
@@ -45,7 +44,7 @@ const responsiveProperties = defineProperties({
 
     fontSize: {
       paragraph: 16,
-      subHeading: 20,
+      smallHeading: 20,
       heading: 30,
     },
 
@@ -61,6 +60,8 @@ const responsiveProperties = defineProperties({
     marginBottom: space,
     marginLeft: space,
 
+    gap: space,
+
     border: {
       px1: '1px solid',
     },
@@ -68,6 +69,7 @@ const responsiveProperties = defineProperties({
 
     transition: {
       all200ms: 'all 200ms',
+      all250ms: 'all 250ms',
     },
 
     cursor: {

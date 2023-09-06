@@ -1,5 +1,6 @@
-import { colors, sprinkles } from '@/sprinkles.css';
+import { colors, sprinkles } from '@/styles/sprinkles.css';
 import { recipe } from '@vanilla-extract/recipes';
+import { mediaSizes } from '@/styles/sprinkles.css';
 
 export const HeaderButtonStyle = recipe({
   base: [
@@ -22,6 +23,14 @@ export const HeaderButtonStyle = recipe({
         '&:hover': {
           background: colors.carbonFiber,
           opacity: 1,
+        },
+      },
+    },
+
+    {
+      '@media': {
+        [mediaSizes.mobile]: {
+          padding: 0,
         },
       },
     },
@@ -80,6 +89,14 @@ export const HeaderButtonTitleStyle = recipe({
       selectors: {
         [`${HeaderButtonStyle()}:hover &`]: {
           opacity: 1,
+        },
+      },
+    },
+
+    {
+      '@media': {
+        [mediaSizes.mobile]: {
+          fontSize: '14px',
         },
       },
     },

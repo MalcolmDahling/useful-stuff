@@ -1,11 +1,12 @@
 import { sprinkles } from '@/styles/sprinkles.css';
 import { recipe } from '@vanilla-extract/recipes';
 
-export const MainStyle = recipe({
+export const RichTextParagraphStyle = recipe({
   base: [
     sprinkles({
-      padding: 'large',
-      background: 'carbonFiber',
+      marginBottom: 'medium',
+      color: 'white',
     }),
+    {},
   ],
 });

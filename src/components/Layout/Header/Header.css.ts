@@ -1,4 +1,4 @@
-import { sprinkles } from '@/sprinkles.css';
+import { sprinkles } from '@/styles/sprinkles.css';
 import { recipe } from '@vanilla-extract/recipes';
 
 export const HeaderStyle = recipe({
