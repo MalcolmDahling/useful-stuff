@@ -3,10 +3,17 @@ import { recipe } from '@vanilla-extract/recipes';
 
 export const RichTextParagraphStyle = recipe({
   base: [
-    sprinkles({
-      marginBottom: 'medium',
-      color: 'white',
-    }),
-    {},
+    sprinkles({}),
+    {
+      wordWrap: 'break-word',
+    },
   ],
+
+  variants: {
+    noMargin: {
+      true: {
+        margin: 0,
+      },
+    },
+  },
 });

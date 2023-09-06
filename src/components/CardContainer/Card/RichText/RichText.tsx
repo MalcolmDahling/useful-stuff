@@ -3,6 +3,7 @@ import { RichTextParagraphStyle } from './RichText.css';
 
 type props = {
   text: any;
+  noMargin?: true;
 };
 
 export default function RichText(props: props) {
@@ -11,7 +12,7 @@ export default function RichText(props: props) {
       {render(props.text, {
         nodeResolvers: {
           [NODE_PARAGRAPH]: (children) => {
-            return <p className={RichTextParagraphStyle()}>{children}</p>;
+            return <p className={RichTextParagraphStyle({ noMargin: props.noMargin })}>{children}</p>;
           },
         },
       })}

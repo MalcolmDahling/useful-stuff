@@ -69,7 +69,7 @@ const responsiveProperties = defineProperties({
 
     transition: {
       all200ms: 'all 200ms',
-      all250ms: 'all 250ms',
+      all500ms: 'all 500ms',
     },
 
     cursor: {

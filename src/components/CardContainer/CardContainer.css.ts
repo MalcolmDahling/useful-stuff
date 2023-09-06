@@ -4,7 +4,7 @@ import { recipe } from '@vanilla-extract/recipes';
 export const CardContainerWrapperStyle = recipe({
   base: [
     sprinkles({
-      transition: 'all250ms',
+      transition: 'all500ms',
     }),
     { overflow: 'hidden' },
   ],
@@ -25,13 +25,13 @@ export const CardContainerStyle = recipe({
   base: [
     sprinkles({
       gap: 'large',
-      transition: 'all250ms',
     }),
     {
       width: '100%',
 
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+      gridAutoRows: 'auto',
     },
   ],
 });

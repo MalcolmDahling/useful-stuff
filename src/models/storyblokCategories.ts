@@ -6,7 +6,7 @@ export type Data = {
     category?: string;
     link?: string;
     text?: any;
-    commands?: any;
+    command?: string;
   };
 };
 

@@ -11,18 +11,20 @@ export default function CardContainer(props: props) {
   const [category, setCategory] = useState(props.category);
   const [show, setShow] = useState(true);
   const [height, setHeight] = useState(0);
+  const [disableFirstAnimation, setDisableFirstAnimation] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setShow(false);
+    if (disableFirstAnimation) {
+      setDisableFirstAnimation(false);
+      return;
+    }
+
+    setHeight(0);
 
     setTimeout(() => {
       setCategory(props.category);
-    }, 250);
-
-    setTimeout(() => {
-      setShow(true);
-    }, 500);
+    }, 600);
   }, [props.category]);
 
   useEffect(() => {
