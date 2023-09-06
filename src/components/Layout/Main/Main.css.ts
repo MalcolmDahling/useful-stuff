@@ -5,7 +5,7 @@ export const MainStyle = recipe({
   base: [
     sprinkles({
       padding: 'large',
-      background: 'eerieBlack',
+      background: 'carbonFiber',
     }),
   ],
 });
