@@ -17,7 +17,6 @@ export default function HeaderButton(props: props) {
     >
       <ReactSVG
         src={props.image}
-        style={{ fill: 'red' }}
         className={HeaderButtonLogoStyle({ selected: props.selected })}
       ></ReactSVG>
       <p className={HeaderButtonTitleStyle({ selected: props.selected })}>{props.text}</p>

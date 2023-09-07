@@ -5,6 +5,7 @@ export const CardStyle = recipe({
   base: [
     sprinkles({
       background: 'eerieBlack',
+      transition: 'all200ms',
     }),
     {
       minHeight: 200,
@@ -13,6 +14,15 @@ export const CardStyle = recipe({
       flexDirection: 'column',
       justifyContent: 'space-between',
       gap: 10,
+
+      border: '1px solid transparent',
+
+      selectors: {
+        '&:hover': {
+          zIndex: 1000,
+          border: `1px solid rgba(255,255,255,0.5)`,
+        },
+      },
     },
   ],
 });
@@ -34,8 +44,6 @@ export const CardTitleStyle = recipe({
       fontSize: 'smallHeading',
     }),
     {
-      flexBasis: '100%',
-      textAlign: 'center',
       fontWeight: 'normal',
     },
   ],
@@ -47,12 +55,6 @@ export const CardLinkStyle = recipe({
       width: 56,
       textDecoration: 'none',
       overflow: 'hidden',
-
-      selectors: {
-        '&:hover': {
-          textDecoration: 'underline',
-        },
-      },
     },
   ],
 });
@@ -65,8 +67,6 @@ export const CardBottomContainerStyle = recipe({
       background: 'chaosBlack',
     }),
     {
-      width: '100%',
-
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',

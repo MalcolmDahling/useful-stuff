@@ -2,6 +2,8 @@ import { StoryblokCategory } from '@/models/storyblokCategories';
 import Card from './Card/Card';
 import { CardContainerStyle, CardContainerWrapperStyle } from './CardContainer.css';
 import { useEffect, useRef, useState } from 'react';
+import { useRecoilState } from 'recoil';
+import { CardContainerIsOpen } from '@/atoms/cardContainerIsOpen';
 
 type props = {
   category: StoryblokCategory;
@@ -9,33 +11,38 @@ type props = {
 
 export default function CardContainer(props: props) {
   const [category, setCategory] = useState(props.category);
-  const [show, setShow] = useState(true);
   const [height, setHeight] = useState(0);
   const [disableFirstAnimation, setDisableFirstAnimation] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
+
+  const [cardContainerIsOpen, setCardContainerIsOpen] = useRecoilState(CardContainerIsOpen);
 
   useEffect(() => {
     if (disableFirstAnimation) {
       setDisableFirstAnimation(false);
       return;
     }
-
     setHeight(0);
+    setCardContainerIsOpen(false);
 
     setTimeout(() => {
       setCategory(props.category);
-    }, 600);
+    }, 500);
   }, [props.category]);
 
   useEffect(() => {
     if (ref.current) {
       setHeight(ref.current.getBoundingClientRect().height);
+
+      setTimeout(() => {
+        setCardContainerIsOpen(true);
+      }, 500);
     }
   }, [category]);
 
   return (
     <section
-      className={CardContainerWrapperStyle({ show: show })}
+      className={CardContainerWrapperStyle({ overflowHidden: !cardContainerIsOpen })}
       style={{ height: height }}
     >
       <div

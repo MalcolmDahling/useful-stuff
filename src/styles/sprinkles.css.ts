@@ -20,7 +20,7 @@ export const colors = {
 
   white: 'rgb(255, 255, 255)',
 
-  indigoPurple: 'rgb(108, 0, 158)',
+  purple: 'rgb(157, 0, 214)',
 };
 
 export const mediaSizes = {
@@ -34,6 +34,7 @@ const space = {
   small: 4,
   medium: 8,
   large: 16,
+  xl: 20,
 };
 
 const responsiveProperties = defineProperties({
@@ -69,6 +70,7 @@ const responsiveProperties = defineProperties({
 
     transition: {
       all200ms: 'all 200ms',
+      all350ms: 'all 350ms',
       all500ms: 'all 500ms',
     },
 

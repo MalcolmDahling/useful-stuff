@@ -6,16 +6,12 @@ export const CardContainerWrapperStyle = recipe({
     sprinkles({
       transition: 'all500ms',
     }),
-    { overflow: 'hidden' },
   ],
 
   variants: {
-    show: {
+    overflowHidden: {
       true: {
-        opacity: 1,
-      },
-      false: {
-        opacity: 0,
+        overflow: 'hidden',
       },
     },
   },
@@ -24,11 +20,11 @@ export const CardContainerWrapperStyle = recipe({
 export const CardContainerStyle = recipe({
   base: [
     sprinkles({
-      gap: 'large',
+      gap: 'xl',
+      padding: 'small',
     }),
     {
       width: '100%',
-
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
       gridAutoRows: 'auto',
