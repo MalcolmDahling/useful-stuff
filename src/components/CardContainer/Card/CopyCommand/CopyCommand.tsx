@@ -18,7 +18,7 @@ export default function CopyCommand(props: props) {
   }, []);
 
   function handleClick() {
-    navigator.clipboard.writeText(props.command);
+    navigator.clipboard.writeText(`npm i ${props.command}`);
 
     setCopied(true);
   }
@@ -35,12 +35,12 @@ export default function CopyCommand(props: props) {
       onClick={handleClick}
       onMouseLeave={handleMouseLeave}
       data-tooltip-id={props.command}
-      data-tooltip-content={`Copy "${props.command}" to clipboard.`}
+      data-tooltip-content={`Copy "npm i ${props.command}" to clipboard.`}
       ref={ref}
       style={{ width: width !== 0 ? width : undefined }}
     >
       {!copied && <Tooltip id={props.command}></Tooltip>}
-      {!copied ? props.command : 'Copied'}
+      {!copied ? `npm i ${props.command}` : 'Copied'}
     </button>
   );
 }
