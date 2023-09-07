@@ -4,7 +4,6 @@ import { recipe } from '@vanilla-extract/recipes';
 export const CardStyle = recipe({
   base: [
     sprinkles({
-      padding: 'large',
       background: 'eerieBlack',
     }),
     {
@@ -12,9 +11,18 @@ export const CardStyle = recipe({
 
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'space-between',
+      justifyContent: 'space-between',
       gap: 10,
     },
+  ],
+});
+
+export const CardTopContainerStyle = recipe({
+  base: [
+    sprinkles({
+      padding: 'large',
+    }),
+    {},
   ],
 });
 
@@ -53,6 +61,8 @@ export const CardBottomContainerStyle = recipe({
   base: [
     sprinkles({
       gap: 'large',
+      padding: 'large',
+      background: 'chaosBlack',
     }),
     {
       width: '100%',
