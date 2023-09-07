@@ -3,8 +3,13 @@ import { globalStyle } from '@vanilla-extract/css';
 
 globalStyle('html, body', {
   margin: 0,
+  marginBottom: 50,
 
   backgroundColor: colors.chaosBlack,
+});
+
+globalStyle('body', {
+  overflowY: 'scroll',
 });
 
 globalStyle('body *', {

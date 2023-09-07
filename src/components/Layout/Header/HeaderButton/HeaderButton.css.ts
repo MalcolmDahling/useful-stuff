@@ -71,7 +71,7 @@ export const HeaderButtonLogoStyle = recipe({
     selected: {
       true: {
         translate: '0% 0%',
-        color: colors.white,
+        color: colors.purple,
       },
       false: {
         translate: '0% 25%',
@@ -108,6 +108,7 @@ export const HeaderButtonTitleStyle = recipe({
     selected: {
       true: {
         opacity: 1,
+        color: colors.purple,
       },
       false: {
         opacity: 0,

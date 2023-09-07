@@ -1,4 +1,4 @@
-import { sprinkles } from '@/styles/sprinkles.css';
+import { colors, sprinkles } from '@/styles/sprinkles.css';
 import { recipe } from '@vanilla-extract/recipes';
 
 export const CardStyle = recipe({
@@ -15,12 +15,13 @@ export const CardStyle = recipe({
       justifyContent: 'space-between',
       gap: 10,
 
-      border: '1px solid transparent',
+      border: '2px solid transparent',
+      borderBottom: `2px solid ${colors.purple}`,
 
       selectors: {
         '&:hover': {
           zIndex: 1000,
-          border: `1px solid rgba(255,255,255,0.5)`,
+          border: `2px solid ${colors.purple}`,
         },
       },
     },
@@ -57,6 +58,20 @@ export const CardLinkStyle = recipe({
       overflow: 'hidden',
     },
   ],
+
+  variants: {
+    fullWidth: {
+      true: {
+        width: '100%',
+
+        selectors: {
+          '&:hover': {
+            textDecoration: 'underline',
+          },
+        },
+      },
+    },
+  },
 });
 
 export const CardBottomContainerStyle = recipe({

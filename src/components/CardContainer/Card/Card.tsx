@@ -27,7 +27,7 @@ export default function Card(props: props) {
             <Link
               href={props.item.content.link}
               target="_blank"
-              className={CardLinkStyle()}
+              className={CardLinkStyle({ fullWidth: props.category !== 'library' })}
             >
               {props.category === 'library' ? <NpmLink link={props.item.content.link}></NpmLink> : props.item.name}
             </Link>

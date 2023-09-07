@@ -12,6 +12,7 @@ type props = {
 export default function CardContainer(props: props) {
   const [category, setCategory] = useState(props.category);
   const [height, setHeight] = useState(0);
+  const [animDuration, setAnimDuration] = useState(0);
   const [disableFirstAnimation, setDisableFirstAnimation] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -22,28 +23,30 @@ export default function CardContainer(props: props) {
       setDisableFirstAnimation(false);
       return;
     }
+
     setHeight(0);
     setCardContainerIsOpen(false);
 
     setTimeout(() => {
       setCategory(props.category);
-    }, 500);
+    }, animDuration);
   }, [props.category]);
 
   useEffect(() => {
     if (ref.current) {
       setHeight(ref.current.getBoundingClientRect().height);
+      setAnimDuration(500 + ref.current.getBoundingClientRect().height / 10);
 
       setTimeout(() => {
         setCardContainerIsOpen(true);
-      }, 500);
+      }, animDuration);
     }
   }, [category]);
 
   return (
     <section
       className={CardContainerWrapperStyle({ overflowHidden: !cardContainerIsOpen })}
-      style={{ height: height }}
+      style={{ height: height, transition: `all ${animDuration}ms` }}
     >
       <div
         className={CardContainerStyle()}

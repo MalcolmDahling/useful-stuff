@@ -20,7 +20,7 @@ export const colors = {
 
   white: 'rgb(255, 255, 255)',
 
-  purple: 'rgb(157, 0, 214)',
+  purple: 'rgb(121, 44, 216)',
 };
 
 export const mediaSizes = {

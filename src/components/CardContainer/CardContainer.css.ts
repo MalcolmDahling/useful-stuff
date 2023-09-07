@@ -2,11 +2,7 @@ import { sprinkles } from '@/styles/sprinkles.css';
 import { recipe } from '@vanilla-extract/recipes';
 
 export const CardContainerWrapperStyle = recipe({
-  base: [
-    sprinkles({
-      transition: 'all500ms',
-    }),
-  ],
+  base: [sprinkles({})],
 
   variants: {
     overflowHidden: {
