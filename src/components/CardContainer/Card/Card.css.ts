@@ -78,13 +78,29 @@ export const CardBottomContainerStyle = recipe({
   base: [
     sprinkles({
       gap: 'large',
+
       padding: 'large',
       background: 'chaosBlack',
+      transition: 'all200ms',
     }),
     {
+      marginLeft: -2,
+      marginRight: -2,
+
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
+
+      borderLeft: '2px solid transparent',
+      borderRight: '2px solid transparent',
+
+      selectors: {
+        [`${CardStyle()}:hover &`]: {
+          zIndex: 1000,
+          borderLeft: `2px solid ${colors.purple}`,
+          borderRight: `2px solid ${colors.purple}`,
+        },
+      },
     },
   ],
 });

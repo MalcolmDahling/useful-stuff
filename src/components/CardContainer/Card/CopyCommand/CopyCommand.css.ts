@@ -14,6 +14,8 @@ export const CopyCommandButtonStyle = recipe({
       transition: 'all200ms',
     }),
     {
+      flexShrink: 1,
+
       overflow: 'hidden',
       whiteSpace: 'nowrap',
       textOverflow: 'ellipsis',

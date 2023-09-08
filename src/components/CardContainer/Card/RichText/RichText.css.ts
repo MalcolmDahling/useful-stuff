@@ -5,6 +5,7 @@ export const RichTextParagraphStyle = recipe({
   base: [
     sprinkles({}),
     {
+      marginBottom: 0,
       wordWrap: 'break-word',
     },
   ],

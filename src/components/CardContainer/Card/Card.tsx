@@ -2,7 +2,6 @@ import { Category, Data } from '@/models/storyblokCategories';
 import { CardBottomContainerStyle, CardLinkStyle, CardStyle, CardTitleStyle, CardTopContainerStyle } from './Card.css';
 import Link from 'next/link';
 import RichText from './RichText/RichText';
-import { ReactSVG } from 'react-svg';
 import CopyCommand from './CopyCommand/CopyCommand';
 import NpmLink from './NpmLink/NpmLink';
 
@@ -24,13 +23,15 @@ export default function Card(props: props) {
           {props.item.content.command && <CopyCommand command={props.item.content.command}></CopyCommand>}
 
           {props.item.content.link && (
-            <Link
-              href={props.item.content.link}
-              target="_blank"
-              className={CardLinkStyle({ fullWidth: props.category !== 'library' })}
-            >
-              {props.category === 'library' ? <NpmLink link={props.item.content.link}></NpmLink> : props.item.name}
-            </Link>
+            <span>
+              <Link
+                href={props.item.content.link}
+                target="_blank"
+                className={CardLinkStyle({ fullWidth: props.category !== 'library' })}
+              >
+                {props.category === 'library' ? <NpmLink link={props.item.content.link}></NpmLink> : props.item.name}
+              </Link>
+            </span>
           )}
         </div>
       )}

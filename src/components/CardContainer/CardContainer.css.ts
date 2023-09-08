@@ -2,15 +2,7 @@ import { sprinkles } from '@/styles/sprinkles.css';
 import { recipe } from '@vanilla-extract/recipes';
 
 export const CardContainerWrapperStyle = recipe({
-  base: [sprinkles({})],
-
-  variants: {
-    overflowHidden: {
-      true: {
-        overflow: 'hidden',
-      },
-    },
-  },
+  base: [sprinkles({}), { overflow: 'hidden' }],
 });
 
 export const CardContainerStyle = recipe({
