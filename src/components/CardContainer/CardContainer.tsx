@@ -35,14 +35,14 @@ export default function CardContainer(props: props) {
   }, [props.category]);
 
   useEffect(() => {
-    if (ref.current) {
-      setHeight(ref.current.getBoundingClientRect().height);
-      setAnimDuration(500 + ref.current.getBoundingClientRect().height / 10);
+    if (!ref.current) return;
 
-      setTimeout(() => {
-        setCardContainerIsOpen(true);
-      }, animDuration);
-    }
+    setHeight(ref.current.getBoundingClientRect().height);
+    setAnimDuration(500 + ref.current.getBoundingClientRect().height / 10);
+
+    setTimeout(() => {
+      setCardContainerIsOpen(true);
+    }, animDuration);
   }, [category]);
 
   function search(input: string) {
