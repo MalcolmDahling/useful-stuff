@@ -1,8 +1,8 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { HeaderStyle } from './Header.css';
 import HeaderButton from './HeaderButton/HeaderButton';
-import { SelectedPage } from '@/atoms/selectedPage';
-import { CardContainerIsOpen } from '@/atoms/cardContainerIsOpen';
+import { SelectedPage } from '@/atoms/SelectedPage';
+import { CardContainerIsOpen } from '@/atoms/CardContainerIsOpen';
 
 export default function Header() {
   const [selectedPage, setSelectedPage] = useRecoilState(SelectedPage);

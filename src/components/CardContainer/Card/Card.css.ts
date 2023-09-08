@@ -37,6 +37,16 @@ export const CardTopContainerStyle = recipe({
   ],
 });
 
+export const CardTopContainerFlexStyle = recipe({
+  base: [
+    {
+      display: 'grid',
+      gridTemplateColumns: '1fr 54px',
+      gap: 20,
+    },
+  ],
+});
+
 export const CardTitleStyle = recipe({
   base: [
     sprinkles({
@@ -46,6 +56,8 @@ export const CardTitleStyle = recipe({
     }),
     {
       fontWeight: 'normal',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
     },
   ],
 });
@@ -53,7 +65,6 @@ export const CardTitleStyle = recipe({
 export const CardLinkStyle = recipe({
   base: [
     {
-      width: 56,
       textDecoration: 'none',
       overflow: 'hidden',
     },

@@ -1,6 +1,10 @@
 import { sprinkles } from '@/styles/sprinkles.css';
 import { recipe } from '@vanilla-extract/recipes';
 
+export const NpmLinkContainerStyle = recipe({
+  base: [{}],
+});
+
 export const NpmLogoStyle = recipe({
   base: [
     sprinkles({

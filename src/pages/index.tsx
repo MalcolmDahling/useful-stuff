@@ -1,7 +1,9 @@
-import { SelectedPage } from '@/atoms/selectedPage';
+import { SelectedPage } from '@/atoms/SelectedPage';
 import CardContainer from '@/components/CardContainer/CardContainer';
+import Search from '@/components/Search/Search';
 import { StoryblokCategory } from '@/models/storyblokCategories';
 import { apiPlugin, getStoryblokApi, storyblokInit } from '@storyblok/react';
+import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 
 export async function getStaticProps() {
@@ -55,10 +57,19 @@ type props = {
 
 export default function Index(props: props) {
   const selectedPage = useRecoilValue(SelectedPage);
+  const [searchInput, setSearchInput] = useState('');
+
+  function search(input: string) {
+    setSearchInput(input.toLowerCase());
+  }
 
   return (
     <>
-      <CardContainer category={props.categories[selectedPage]}></CardContainer>
+      <Search search={(input: string) => search(input)}></Search>
+      <CardContainer
+        search={searchInput}
+        category={props.categories[selectedPage]}
+      ></CardContainer>
     </>
   );
 }

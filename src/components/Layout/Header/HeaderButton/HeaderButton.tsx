@@ -1,5 +1,5 @@
 import { HeaderButtonLogoStyle, HeaderButtonStyle, HeaderButtonTitleStyle } from './HeaderButton.css';
-import NodejsLogo from './../../../../../public/images/logos/nodejs.svg';
+import NpmLogo from './../../../../../public/images/logos/npm.svg';
 import GitLogo from './../../../../../public/images/logos/git.svg';
 import CSSLogo from './../../../../../public/images/logos/css.svg';
 import VSCodeLogo from './../../../../../public/images/logos/vscode.svg';
@@ -21,7 +21,7 @@ export default function HeaderButton(props: props) {
   };
 
   const logoComponents: Record<string, JSX.Element> = {
-    Libraries: <NodejsLogo {...SVGProps} />,
+    Libraries: <NpmLogo {...SVGProps} />,
     Git: <GitLogo {...SVGProps} />,
     CSS: <CSSLogo {...SVGProps} />,
     'VS Code': <VSCodeLogo {...SVGProps} />,
