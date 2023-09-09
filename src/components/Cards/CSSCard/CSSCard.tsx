@@ -1,6 +1,6 @@
 import { Data } from '@/models/storyblokCategories';
-import { CardTitleStyle, CardTopContainerStyle } from '../../Card.css';
 import RichText from '../../RichText/RichText';
+import { CardTitleStyle, CardTopContainerStyle } from '@/components/Card/Card.css';
 
 type props = {
   item: Data;

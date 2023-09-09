@@ -1,12 +1,12 @@
+import { CardBottomContainerStyle, CardLinkStyle, CardTitleStyle, CardTopContainerStyle } from '@/components/Card/Card.css';
 import { Data } from '@/models/storyblokCategories';
-import { CardBottomContainerStyle, CardLinkStyle, CardTitleStyle, CardTopContainerStyle } from '../../Card.css';
 import Link from 'next/link';
 
 type props = {
   item: Data;
 };
 
-export default function LinkCard(props: props) {
+export default function VSCodeCard(props: props) {
   return (
     <>
       <div className={CardTopContainerStyle()}>

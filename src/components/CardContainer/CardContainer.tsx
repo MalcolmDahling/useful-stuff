@@ -1,5 +1,5 @@
 import { StoryblokCategory } from '@/models/storyblokCategories';
-import Card from './Card/Card';
+import Card from '../Card/Card';
 import { CardContainerStyle, CardContainerWrapperStyle } from './CardContainer.css';
 import React, { useEffect, useRef, useState } from 'react';
 import { useRecoilState } from 'recoil';

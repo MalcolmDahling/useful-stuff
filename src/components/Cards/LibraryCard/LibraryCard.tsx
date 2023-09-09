@@ -1,12 +1,12 @@
 import { Data } from '@/models/storyblokCategories';
-import { CardBottomContainerStyle, CardLinkStyle, CardTitleStyle, CardTopContainerFlexStyle, CardTopContainerStyle } from '../../Card.css';
-import Link from 'next/link';
-import NpmLogo from '../../../../../../public/images/logos/npm.svg';
-import { Tooltip } from 'react-tooltip';
 import { NpmLogoStyle } from './LibraryCard.css';
 import RichText from '../../RichText/RichText';
-import CopyCommand from '../../CopyCommand/CopyCommand';
-import AddToCart from '../../AddToCart/AddToCart';
+import { CardBottomContainerStyle, CardLinkStyle, CardTitleStyle, CardTopContainerFlexStyle, CardTopContainerStyle } from '@/components/Card/Card.css';
+import NpmLogo from '../../../../public/images/logos/npm.svg';
+import CopyCommand from './CopyCommand/CopyCommand';
+import AddToCart from './AddToCart/AddToCart';
+import Link from 'next/link';
+import { Tooltip } from 'react-tooltip';
 
 type props = {
   item: Data;

@@ -1,19 +1,21 @@
 import { Data } from '@/models/storyblokCategories';
-import { CardBottomContainerStyle, CardLinkStyle, CardTitleStyle, CardTopContainerStyle } from '../../Card.css';
 import Link from 'next/link';
+import RichText from '../../RichText/RichText';
+import { CardBottomContainerStyle, CardLinkStyle, CardTitleStyle, CardTopContainerStyle } from '@/components/Card/Card.css';
 
 type props = {
   item: Data;
 };
 
-export default function VSCodeCard(props: props) {
+export default function MiscCard(props: props) {
   return (
     <>
       <div className={CardTopContainerStyle()}>
         <h2 className={CardTitleStyle()}>{props.item.name}</h2>
+        {props.item.content.text.content[0].content && <RichText text={props.item.content.text}></RichText>}
       </div>
-      <div className={CardBottomContainerStyle()}>
-        {props.item.content.link && (
+      {props.item.content.link && (
+        <div className={CardBottomContainerStyle()}>
           <Link
             href={props.item.content.link}
             target="_blank"
@@ -21,8 +23,8 @@ export default function VSCodeCard(props: props) {
           >
             {props.item.name}
           </Link>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 }

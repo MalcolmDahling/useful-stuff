@@ -1,11 +1,11 @@
 import { Category, Data } from '@/models/storyblokCategories';
 import { CardStyle } from './Card.css';
-import LibraryCard from './Cards/LibraryCard/LibraryCard';
-import GitCard from './Cards/GitCard/GitCard';
-import CSSCard from './Cards/CSSCard/CSSCard';
-import VSCodeCard from './Cards/VSCodeCard/VSCodeCard';
-import LinkCard from './Cards/LinkCard/LinkCard';
-import MiscCard from './Cards/MiscCard/MiscCard';
+import LibraryCard from '@/components/Cards/LibraryCard/LibraryCard';
+import GitCard from '@/components/Cards/GitCard/GitCard';
+import CSSCard from '@/components/Cards/CSSCard/CSSCard';
+import VSCodeCard from '@/components/Cards/VSCodeCard/VSCodeCard';
+import LinkCard from '@/components/Cards/LinkCard/LinkCard';
+import MiscCard from '@/components/Cards/MiscCard/MiscCard';
 
 type props = {
   category: Category;
