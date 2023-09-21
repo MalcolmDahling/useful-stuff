@@ -37,7 +37,7 @@ export const CardTopContainerStyle = recipe({
   ],
 });
 
-export const CardTopContainerFlexStyle = recipe({
+export const CardTopContainerGridStyle = recipe({
   base: [
     {
       display: 'grid',

@@ -8,7 +8,7 @@ type props = {
 
 export default function RichText(props: props) {
   return (
-    <>
+    <div>
       {render(props.text, {
         nodeResolvers: {
           [NODE_PARAGRAPH]: (children) => {
@@ -16,6 +16,6 @@ export default function RichText(props: props) {
           },
         },
       })}
-    </>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 import { Data } from '@/models/storyblokCategories';
 import { NpmLogoStyle } from './LibraryCard.css';
 import RichText from '../../RichText/RichText';
-import { CardBottomContainerStyle, CardLinkStyle, CardTitleStyle, CardTopContainerFlexStyle, CardTopContainerStyle } from '@/components/Card/Card.css';
+import { CardBottomContainerStyle, CardLinkStyle, CardTitleStyle, CardTopContainerGridStyle, CardTopContainerStyle } from '@/components/Card/Card.css';
 import NpmLogo from '../../../../public/images/logos/npm.svg';
 import CopyCommand from './CopyCommand/CopyCommand';
 import AddToCart from './AddToCart/AddToCart';
@@ -16,7 +16,7 @@ export default function LibraryCard(props: props) {
   return (
     <>
       <div className={CardTopContainerStyle()}>
-        <div className={CardTopContainerFlexStyle()}>
+        <div className={CardTopContainerGridStyle()}>
           <h2 className={CardTitleStyle()}>{props.item.name}</h2>
 
           {props.item.content.link && (
@@ -33,9 +33,9 @@ export default function LibraryCard(props: props) {
               ></NpmLogo>
             </Link>
           )}
-
-          <RichText text={props.item.content.text}></RichText>
         </div>
+
+        <RichText text={props.item.content.text}></RichText>
       </div>
 
       <div className={CardBottomContainerStyle()}>

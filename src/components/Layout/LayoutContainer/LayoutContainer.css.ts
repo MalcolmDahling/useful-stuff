@@ -1,3 +1,4 @@
+import { mediaSizes, sprinkles } from '@/styles/sprinkles.css';
 import { recipe } from '@vanilla-extract/recipes';
 
 export const BackgroundStyle = recipe({
@@ -14,10 +15,25 @@ export const BackgroundStyle = recipe({
 
 export const LayoutContainerStyle = recipe({
   base: [
+    sprinkles({
+      padding: 'large',
+    }),
     {
       maxWidth: 1000,
       margin: 'auto',
 
+      '@media': {
+        [mediaSizes.mobile]: {
+          padding: 0,
+        },
+      },
+    },
+  ],
+});
+
+export const LayoutChildrenContainerStyle = recipe({
+  base: [
+    {
       boxShadow: '5px 5px 5px 5px rgba(0,0,0,0.25)',
     },
   ],

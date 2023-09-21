@@ -1,4 +1,5 @@
-import { LayoutContainerStyle, BackgroundStyle } from './LayoutContainer.css';
+import { LayoutContainerStyle, BackgroundStyle, LayoutChildrenContainerStyle } from './LayoutContainer.css';
+import Background from '../../../../public/images/background.svg';
 
 type props = {
   children: React.ReactNode;
@@ -7,8 +8,11 @@ type props = {
 export default function LayoutContainer(props: props) {
   return (
     <div className={LayoutContainerStyle()}>
-      <div className={BackgroundStyle()}></div>
-      {props.children}
+      <div className={BackgroundStyle()}>
+        <Background></Background>
+      </div>
+
+      <div className={LayoutChildrenContainerStyle()}>{props.children}</div>
     </div>
   );
 }
