@@ -12,7 +12,7 @@ type props = {
 
 export default function CardContainer(props: props) {
   const [category, setCategory] = useState(props.category);
-  const [height, setHeight] = useState<undefined | number>(undefined);
+  const [open, setOpen] = useState(true);
   const [animDuration, setAnimDuration] = useState(0);
   const [disableFirstAnimation, setDisableFirstAnimation] = useState(true);
 
@@ -26,7 +26,7 @@ export default function CardContainer(props: props) {
       return;
     }
 
-    setHeight(0);
+    setOpen(false);
     setCardContainerIsOpen(false);
 
     setTimeout(() => {
@@ -37,7 +37,7 @@ export default function CardContainer(props: props) {
   useEffect(() => {
     if (!ref.current) return;
 
-    setHeight(ref.current.getBoundingClientRect().height);
+    setOpen(true);
     setAnimDuration(500 + ref.current.getBoundingClientRect().height / 10);
 
     setTimeout(() => {
@@ -46,8 +46,11 @@ export default function CardContainer(props: props) {
   }, [category]);
 
   return (
-    <section className={CardContainerWrapperStyle()}>
-      <div style={{ height: height, transition: `all ${animDuration}ms` }}>
+    <section
+      className={CardContainerWrapperStyle({ open: open })}
+      style={{ transition: `all ${animDuration}ms` }}
+    >
+      <div style={{ overflow: 'hidden' }}>
         <div
           className={CardContainerStyle()}
           ref={ref}

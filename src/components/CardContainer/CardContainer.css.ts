@@ -3,7 +3,24 @@ import { recipe } from '@vanilla-extract/recipes';
 import { mediaSizes } from '@/styles/sprinkles.css';
 
 export const CardContainerWrapperStyle = recipe({
-  base: [sprinkles({}), { overflow: 'hidden' }],
+  base: [
+    sprinkles({}),
+    {
+      display: 'grid',
+      overflow: 'hidden',
+    },
+  ],
+
+  variants: {
+    open: {
+      true: {
+        gridTemplateRows: '1fr',
+      },
+      false: {
+        gridTemplateRows: '0fr',
+      },
+    },
+  },
 });
 
 export const CardContainerStyle = recipe({
